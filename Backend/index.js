@@ -8,7 +8,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 app.use(express.json());
 const corsOptions = {
-  origin: 'https://6651c4f59bc1773eee88773c--shayari-genr.netlify.app',
+  origin: 'https://6651e336a8055a2c2f175539--fancy-daffodil-5bfa64.netlify.app/',
   methods: 'GET,POST,PUT,DELETE',
   allowedHeaders: 'Content-Type,Authorization',
   optionsSuccessStatus: 200
