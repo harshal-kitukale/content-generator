@@ -20,6 +20,9 @@ const genAI = new GoogleGenerativeAI(process.env.OPENAI_API_KEY);
 
 app.options('*', cors(corsOptions));
 
+app.get("/",(req,res)=>{
+  res.json("server is healthy")
+})
 app.post("/content", async (req, res) => {
   try {
     const { prompt } = req.body;
