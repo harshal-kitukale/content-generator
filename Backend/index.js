@@ -11,11 +11,14 @@ const corsOptions = {
   origin: 'https://6651c4f59bc1773eee88773c--shayari-genr.netlify.app',
   methods: 'GET,POST,PUT,DELETE',
   allowedHeaders: 'Content-Type,Authorization',
+  optionsSuccessStatus: 200
 };
 
 app.use(cors(corsOptions));
 
 const genAI = new GoogleGenerativeAI(process.env.OPENAI_API_KEY);
+
+app.options('*', cors(corsOptions));
 
 app.post("/content", async (req, res) => {
   try {
