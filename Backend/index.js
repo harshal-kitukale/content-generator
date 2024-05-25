@@ -7,7 +7,13 @@ const port = process.env.PORT || 3000;
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 app.use(express.json());
-app.use(cors());
+const corsOptions = {
+  origin: 'https://6651c4f59bc1773eee88773c--shayari-genr.netlify.app',
+  methods: 'GET,POST,PUT,DELETE',
+  allowedHeaders: 'Content-Type,Authorization',
+};
+
+app.use(cors(corsOptions));
 
 const genAI = new GoogleGenerativeAI(process.env.OPENAI_API_KEY);
 
