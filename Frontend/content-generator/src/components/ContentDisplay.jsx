@@ -10,7 +10,7 @@ const ContentDisplay = () => {
       ? content
           .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")
           .replace(/^\*\s(.*?):$/gm, "<ol><li>$1:</li></ol>")
-          .replace(/^\*\s(.*?)$/gm, "<li>$1</li>")
+          .replace(/^\* (.*)$/gm, '<li>$1</li>')
           .replace(/\n\n/g, "<br>")
           .replace(/\n/g, "<br>")
       : [];
