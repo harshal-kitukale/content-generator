@@ -1,5 +1,4 @@
 const express = require("express");
-const axios = require("axios");
 require("dotenv").config();
 const cors = require("cors");
 const app = express();
@@ -28,7 +27,7 @@ app.post("/content", async (req, res) => {
     const { prompt } = req.body;
     console.log(prompt);
 
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
     const result = await model.generateContent(
       [prompt],
